@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #000000 0%, #1c1c1c 100%);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+  border: 2px solid #0f0;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #0f0;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  font-size: 8vmin;
+  color: #0f0;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+  box-shadow: 0 0 15px #0f0;
+  transform: scale(1.05);
+}
+
+#reset-btn,#exit-btn,#new-btn1,#new-btn2 ,#start-ai-btn,#start-you-btn,#quit-btn{
+  padding: 1rem;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #000000 0%, #1c1c1c 100%);
+  color: #0f0;
+  border-radius: 1rem;
+  border: 2px solid #0f0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem;
+  box-shadow: 0 0 10px #0f0;
+}
+#reset-btn:hover,#quit-btn:hover,#exit-btn:hover,#new-btn1:hover, #new-btn2:hover {
+  box-shadow: 0 0 20px #0f0;
+  transform: scale(1.1);
+}
+
+#msg {
+  color: #0f0;
+  font-size: 5vmin;
+}
+#msg-2 {
+  color: #0f0;
+  font-size: 3vmin;
+}
+
+.msg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #0f0;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #0f0;
+  padding: 2rem;
+  animation: flash 1s infinite alternate;
+  z-index: 1000;
+}
+
+@keyframes flash {
+  from {
+    box-shadow: 0 0 10px #0f0;
+  }
+  to {
+    box-shadow: 0 0 20px #0f0;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.line {
+  position: absolute;
+  background-color: red;
+  height: 5px;
+  width: 300px;
+  z-index: 10;
+  transform-origin: left center;
+}
+
+.line.vertical {
+  width: 5px;
+  height: 300px;
+}
+
+.line.diagonal {
+  width: 424px; /* Adjust according to your board size */
+}
+
+#exit-btn{
+  width:135px;
+  font-size:20px;
+}
+
+@media screen and (max-width: 768px) {
+  .game {
+    height: 50vmin;
+    width: 50vmin;
+  }
+  
+  .box {
+    height: 15vmin;
+    width: 15vmin;
+    font-size: 6vmin;
+  }
+}
+
+
